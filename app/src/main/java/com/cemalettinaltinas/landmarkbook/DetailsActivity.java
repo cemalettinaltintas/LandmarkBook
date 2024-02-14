@@ -19,9 +19,12 @@ public class DetailsActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        Intent intent=getIntent();
+        //Intent intent=getIntent();
         //Casting
-        Landmark selectedLandmark= (Landmark) intent.getSerializableExtra("landmark");
+        //Landmark selectedLandmark= (Landmark) intent.getSerializableExtra("landmark");
+
+        Singleton singleton=Singleton.getInstance();
+        Landmark selectedLandmark= singleton.getSentLanmark();
 
         binding.nameText.setText(selectedLandmark.name);
         binding.countryText.setText(selectedLandmark.country);

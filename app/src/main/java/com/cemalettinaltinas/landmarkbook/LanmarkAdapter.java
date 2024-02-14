@@ -35,7 +35,9 @@ public class LanmarkAdapter extends RecyclerView.Adapter<LanmarkAdapter.LanmarkH
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(holder.itemView.getContext(), DetailsActivity.class);
-                intent.putExtra("landmark",landmarkArrayList.get(position));
+                //intent.putExtra("landmark",landmarkArrayList.get(position));
+                Singleton singleton=Singleton.getInstance();
+                singleton.setSentLanmark(landmarkArrayList.get(position));
                 holder.itemView.getContext().startActivity(intent);
             }
         });
